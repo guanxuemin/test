@@ -1,0 +1,253 @@
+ <!DOCTYPE html>
+<html><!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>详情页</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="EditRegion5" -->
+<link type="text/css" rel="stylesheet" href="css/mystyle.css"/>
+<link type="text/css" rel="stylesheet" href="css/list01.css"/>
+<link type="text/css" rel="stylesheet" href="css/detail01style.css"/>
+<script type="text/javascript">
+  window.onload=init;
+  
+  function init(){
+	  var jt = document.getElementById("jiantou1");
+	  var m1 = document.getElementById("m1");
+	  var m2 = document.getElementById("m2");
+	  var m3 = document.getElementById("m3");
+	  m1.onclick = function(){
+		  jt.style.top = 620+"px";
+		  m1.style.background='url(images/ui01.jpg)';
+		  m2.style.background='url(images/ui02.jpg)';
+		  m3.style.background='url(images/ui03.jpg)';
+		  }
+	  m2.onclick = function(){
+		  jt.style.top = 655+"px";
+		  m2.style.background='url(images/ui002.jpg)';
+		  m1.style.background='url(images/ui001.jpg)';
+		  m3.style.background='url(images/ui03.jpg)';
+		  }
+	  m3.onclick = function(){
+		  jt.style.top = 690+"px";
+		  m3.style.background='url(images/ui003.jpg)';
+		  m1.style.background='url(images/ui001.jpg)';
+		  m2.style.background='url(images/ui02.jpg)';
+		  }
+	  }
+	  
+	 function xs(IDname,momde){document.getElementById(IDname).style.display=momde;}
+ </script>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+<body>
+	<div id="top_wrap">
+    	<div class="top_content">
+        	<p>福建<a href="#">[切换城市]</a><a id="to_top"></a></p>
+            <ul>
+            	<li><a href="#" class="current">登录</a><span>|</span></li>
+                <li><a href="#" class="current">免费注册</a><span>|</span></li>
+                <li><a href="#" class="current2">我的亿农</a><span>|</span></li>
+                <li class="margin_R"><a href="#">帮助中心</a></li>
+                <li class="margin_R addbg1"><a href="#">微信关注</a></li>
+                <li class="margin_R addbg2"><a href="#">微博关注</a></li>
+                <li onclick="f1()"><a href="#" class="current2 current3">下载手机APP</a><span class="no_mar">|</span></li>
+            </ul>
+            <div id="erweima"></div>
+        </div>
+    </div>
+	<!-- InstanceBeginEditable name="EditRegion3" -->
+ 
+    <!-- InstanceEndEditable -->
+	<div id="header">
+   	  <div class="header_left"><img src="images/logo.jpg"></div>
+        <div class="header_center">
+        	<p class="p1">
+                	<span class="tex_wrap"><input type="text" class="tex" ></input></span>
+                	<span class="btn_wrap"><input type="submit" value="搜索" class="btn"></input></span>
+            </p>
+            <p class="p2">热门搜索：<a href="#"> 史丹利</a> <a href="#">鲁西</a> <a href="#">荃玉</a> <a href="#">史丹利</a></p>
+        </div>
+        <div class="header_right">
+        	<p class="cir">0</p>
+        	<div class="shopping_car"><p>购物车 &nbsp;&nbsp;></p></div>
+            
+            <div class="box_right">
+            	<p class="p3">订购热线</p>
+                <p class="p4"><b>400-6766-999</b></p>
+            </div>
+        </div>
+    </div>
+<!-- 导航  --><!-- InstanceBeginEditable name="EditRegion4" -->
+<div id="box">
+  <div id="ban_wrap">
+    <div class="ban_wrap_left">
+      <h2>
+        <p>所有商品分类</p>
+      </h2>
+      <div class="bor" id="bor">
+        <div class="left1" onmouseover="xs('huafei','block')"  onmouseout="xs('huafei','none')">
+          <p class="left1_1">化肥</p>
+          <p class="left1_2"><a href="#">氮肥</a><span>|</span><a href="#">专用肥</a><span>|</span><a href="#">生长调节剂</a><a href="#">磷肥</a><span>|</span><a href="#">有机肥</a><span>|</span><a href="#">生物有机肥</a><a href="#">钾肥</a><span>|</span><a href="#">叶面肥</a><span>|</span><a href="#">肥料增效剂</a><a href="#">土壤调理剂</a><span>|</span><a href="#">复合复混肥</a></p>
+        </div>
+        <div class="left1" onmouseover="xs('zhongzi','block')"  onmouseout="xs('zhongzi','none')">
+          <p class="left1_1">种子</p>
+          <p class="left1_2"><a href="#">玉米</a><span>|</span><a href="#">小麦</a><span>|</span><a href="#">牧草种子</a><span>|</span><a href="#">棉花</a><span>|</span><a href="#">花生</a><span>|</span><a href="#">花卉种子</a><span>|</span><a href="#">油菜</a><span>|</span><a href="#">红薯</a><span>|</span><a href="#">蔬菜种子</a><span>|</span><a href="#">芝麻</a><span>|</span><a href="#">大豆</a><span>|</span><a href="#">瓜果种子</a></p>
+        </div>
+        <div class="left1 left3" onmouseover="xs('nongyao','block')"  onmouseout="xs('nongyao','none')">
+          <p class="left1_1">农药</p>
+          <p class="left1_2 left1_3"><a href="#">除草剂</a><span>|</span><a href="#">杀虫剂</a><span>|</span><a href="#">杀菌剂</a></p>
+        </div>
+      </div>
+    </div>
+    <div id="huafei" onmouseover="xs('huafei','block')"  onmouseout="xs('huafei','none')">
+      <h4>分类</h4>
+      <p><b>大田作物</b><a href="#">氮肥</a><span>|</span><a href="#">磷肥</a><span>|</span><a href="#">钾肥</a><span>|</span><a href="#">复合复混肥</a><span>|</span><a href="#">生物有机肥</a><span>|</span><a href="#">有机肥</a><span>|</span><a href="#">叶面肥</a></p>
+      <p><b>经济作物</b><a href="#">生物有机肥</a><span>|</span><a href="#">叶面肥</a></p>
+      <p><b>水果蔬菜</b><a href="#">生物有机肥</a><span>|</span><a href="#">叶面肥</a><span>|</span><a href="#">水溶肥</a></p>
+      <p><b>其他肥料</b><a href="#">专用肥</a><span>|</span><a href="#">土壤调理剂</a><span>|</span><a href="#">中微量元素肥</a><span>|</span><a href="#">肥料增效剂</a><span>|</span><a href="#">生长调节剂</a></p>
+    </div>
+    <div id="zhongzi" onmouseover="xs('zhongzi','block')"  onmouseout="xs('zhongzi','none')">
+      <h4>分类</h4>
+      <p><b>大田作物</b><a href="#">氮肥</a><span>|</span><a href="#">磷肥</a><span>|</span><a href="#">钾肥</a><span>|</span><a href="#">复合复混肥</a><span>|</span><a href="#">生物有机肥</a><span>|</span><a href="#">有机肥</a><span>|</span><a href="#">叶面肥</a></p>
+      <p><b>经济作物</b><a href="#">生物有机肥</a><span>|</span><a href="#">叶面肥</a></p>
+      <p><b>水果蔬菜</b><a href="#">生物有机肥</a><span>|</span><a href="#">叶面肥</a><span>|</span><a href="#">水溶肥</a></p>
+      <p><b>其他肥料</b><a href="#">专用肥</a><span>|</span><a href="#">土壤调理剂</a><span>|</span><a href="#">中微量元素肥</a><span>|</span><a href="#">肥料增效剂</a><span>|</span><a href="#">生长调节剂</a></p>
+    </div>
+    <div id="nongyao" onmouseover="xs('nongyao','block')"  onmouseout="xs('nongyao','none')">
+      <h4>分类</h4>
+      <p><b>大田作物</b><a href="#">氮肥</a><span>|</span><a href="#">磷肥</a><span>|</span><a href="#">钾肥</a><span>|</span><a href="#">复合复混肥</a><span>|</span><a href="#">生物有机肥</a><span>|</span><a href="#">有机肥</a><span>|</span><a href="#">叶面肥</a></p>
+    </div>
+    <div class="ban_wrap_right">
+      <ul class="nav">
+        <li class="current"><a href="#" class="current2">商城</a></li>
+        <li><a href="#" class="current2">预定</a></li>
+        <li><a href="mappag.html" class="current2">服务地图</a></li>
+        <li><a href="#" class="current2">众筹农业</a></li>
+        <li><a href="#" class="current2">专家问答</a></li>
+        <li><a href="nongyebaike.html" class="current2">农业百科</a></li>
+      </ul>
+        <ul class="tubiao">
+          <li><img src="images/icon06.png"/></li>
+          <li><img src="images/icon07.jpg"/></li>
+          <li><img src="images/icon08.jpg"/></li>
+          <li><a href="#top" target="_self"><img src="images/icon09.jpg"/></a></li>
+        </ul>
+        <p class="cir">0</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- 内容  -->
+ <div id="details_box">
+ 	<p class="current_dress">当前位置： <a href="index.html"> 首页 </a> > <a href="list01.html"> 化肥 </a> > <a href="#"> 生长调节剂 </a></p>
+    <dl>
+    	<dt>
+        	<p class="d_p01"><img src="images/details_01.jpg"/></p>
+            <ul>	
+            	<p class="left_icon"><img src="images/left_icon.jpg"/></p>
+            	<li><img src="images/details_02.jpg"/></li>
+                <li><img src="images/details_02.jpg"/></li>
+                <li><img src="images/details_02.jpg"/></li>
+                <li><img src="images/details_02.jpg"/></li>
+                <li><img src="images/details_02.jpg"/></li>
+                <p class="right_icon"><img src="images/right_icon.jpg"/></p>
+            </ul>
+            <p><a href="#" class="a1">分享</a> <a href="#" class="a2">收藏（100人气）</a> </p>
+        </dt>
+        <dd>
+        	<h2>万惠矮丰灵-植物生长调节剂</h2>
+            <p class="p1">￥60.00  <del>￥120.00</del></p>
+            <p class="p2">赠送积分：<span>60积分</span></p>
+            <p class="p3">规格：箱（30克*200袋）</p>
+            <textarea></textarea>
+            <p class="p4">我要买: <input type="text" value="1" class="tex"/> 库存：<span>180</span> <span id="jian"><img src="images/jian_icon.jpg"/></span>
+            <span id="add"><img src="images/add_icon.jpg"/></span></p>
+            <p class="p5"><span class="s1">加入购物车</span><span class="s2">立即购买</span></p>
+        </dd>
+    </dl>
+ </div>
+ <div id="details_content">
+ 	<ul>
+    	<li class="current"><a href="#">商品详情</a></li>
+        <li><a href="#">成交记录（200）</a></li>
+        <li><a href="#">累计评价（125）</a></li>
+    </ul>
+    <dl class="box1" id="box1">
+    	<dt><img src="images/D.jpg"/></dt>
+        <dd>
+        	<div>
+            	<h1>特征特性</h1>
+            	<p>  &nbsp;&nbsp;&nbsp;&nbsp;该品种夏播生育期9天。株型半紧凑，全株叶片数20片，株高252-268cm穗位高112-120cm；幼苗页鞘紫色，叶尖圆形，夜色淡绿；雄穗分枝中等，外颖绿色略带紫，花药黄色，花丝黄色；果穗筒形，遂长17.4-19.2cm；穗行数15.0-16.4行，行粒数39.8粒；穗轴红色，籽粒黄色，马齿形，千粒重310.0-338.0g，出籽率89.9%。抗性坚定：2005年河北省农科院植保所抗病虫接种鉴定：高抗大斑病（1级）、矮花叶病（幼苗病株0.0%）、；中抗小斑病（5级）、弯孢菌叶斑病（5级）；感茎腐病（病株率33.3%）、瘤黑粉病（病株率13.0%）；高感玉米螟（9.0级）。</p>
+                <h1>品质分析</h1>
+                <p>  &nbsp;&nbsp;&nbsp;&nbsp;2005年农业部农产品质量监督检验测试中心（郑州）检测；籽粒粗蛋白质10.61%，粗脂肪（4.91%），粗淀粉72.18%，赖氨酸（0.31%），容量（756L）。</p>
+            	<h1>质量表现</h1>
+                <p>  &nbsp;&nbsp;&nbsp;&nbsp;2004年河南省玉米新品种区域实验（3000株/亩二组），10点汇总，平均亩产537.7KG，比对照豫玉22曾产9.2%；差异极大显著，居17个参试品种第六位；2005年续试（3500/亩三组）8点汇总，平均亩产59.1KG，比对照嗩单18曾产5.7%，差异不显著，居18个参试品种第三位。2005年河南省玉米品种生产试验（3000柱/亩4组），8点汇总，平均单产546.7KG，比对照豫玉22曾产5.5%，居九个参试品种第八位。</p>
+            </div>
+        </dd>
+    </dl>
+    <div class="box2" id="box2"></div>
+    <div class="box3" id="box3"></div>
+ 
+ </div> 
+
+
+<!-- InstanceEndEditable --><!-- footer-->
+    <div id="footer">
+    	<div class="footer_top">
+        	<div class="footer_top_left">
+            	<dl>
+                	<dt>新手上路</dt>
+                    <dd><a href="#">购物流程</a></dd>
+                    <dd><a href="#">常见问题</a></dd>
+                </dl>
+                <dl>
+                	<dt>配送方式</dt>
+                    <dd><a href="#">货到付款</a></dd>
+                    <dd><a href="#">支付方式</a></dd>
+                    <dd><a href="#">支付流程</a></dd>
+                </dl>
+                <dl>
+                	<dt>购物指南</dt>
+                    <dd><a href="#">电话订购流程</a></dd>
+                    <dd><a href="#">网上订购流程</a></dd>
+                </dl>
+                <dl>
+                	<dt>售后服务</dt>
+                    <dd><a href="#">退换货原则</a></dd>
+                    <dd><a href="#">售后服务保证</a></dd>
+                    <dd><a href="#">换货流程</a></dd>
+                </dl>
+                <dl>
+                	<dt>关于我们</dt>
+                    <dd><a href="#">联系方式</a></dd>
+                    <dd><a href="#">公司介绍</a></dd>
+                </dl>
+                <dl>
+                	<dt>关注亿农</dt>
+                    <dd><img src="images/weiboicon.jpg"> <a href="#">关注亿农乐购微博</a></dd>
+                    <dd><img src="images/wecharticon.jpg"> <a href="#">关注亿农乐购微信</a></dd>
+                    <dd><a href="#"> &nbsp;&nbsp;&nbsp;下载亿农乐购APP</a></dd>
+                </dl>
+            
+            </div>
+            <div class="footer_top_right">
+            	<img src="images/proot.jpg">
+                <p>安全农产品溯源公众平台</p>
+            </div>
+        </div>
+        <div class="bottom">
+        	<p>&copy; 2005-2015 亿农乐购网上商城 版权所有，并保留所有权利。 ICP备案证书号:13003346</p>
+            <p>天津市武清区创业总部基地C07  Tel: 400-6766-999</p>
+        </div>
+    
+    </div>
+    
+</body>
+
+
+<!-- InstanceEnd --></html>

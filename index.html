@@ -1,0 +1,631 @@
+   <!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>主页</title>
+<link type="text/css" rel="stylesheet" href="css/mystyle.css"/>
+<script src="js/startmove.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  //window.onload=init;
+  
+  onload = function (){
+	  var jt = document.getElementById("jiantou1");
+	  var m1 = document.getElementById("m1");
+	  var m2 = document.getElementById("m2");
+	  var m3 = document.getElementById("m3");
+	  m1.onclick = function(){
+		  jt.style.top = 520+"px";
+		  m1.style.background='url(images/ui01.jpg)';
+		  m2.style.background='url(images/ui02.jpg)';
+		  m3.style.background='url(images/ui03.jpg)';
+		  }
+	  m2.onclick = function(){
+		  jt.style.top = 555+"px";
+		  m2.style.background='url(images/ui002.jpg)';
+		  m1.style.background='url(images/ui001.jpg)';
+		  m3.style.background='url(images/ui03.jpg)';
+		  }
+	  m3.onclick = function(){
+		  jt.style.top = 590+"px";
+		  m3.style.background='url(images/ui003.jpg)';
+		  m1.style.background='url(images/ui001.jpg)';
+		  m2.style.background='url(images/ui02.jpg)';
+		 };
+		
+		var banner = document.getElementById("banner");
+		var lis = document.getElementsByClassName("bli");
+		var btns = document.getElementsByTagName("ol")[0].getElementsByTagName("li");
+		var now = 0;
+		for(var i = 0;i<btns.length;i++){
+			btns[i].index = i;
+			btns[i].onclick = function (){
+				for(var j = 0;j<btns.length;j++){
+					if(j == this.index){
+						move(lis[j],{"opacity":100})
+						btns[j].className = "ocurrent";
+					}else{
+						move(lis[j],{"opacity":0})
+						btns[j].className = "";
+					}
+				}
+				now = this.index;
+			}
+		};
+		var timer = setInterval(next,1500);
+		banner.onmouseover = function (){
+			clearInterval(timer)
+		};
+		banner.onmouseout = function (){
+			timer = setInterval(next,1500)
+		};
+		
+		function next(){
+			now = now + 1;
+			if(now > btns.length - 1){
+				now = 0;
+			}
+			for(var j = 0;j< btns.length;j++){
+				if(j == now){
+						move(lis[j],{"opacity":100})
+						btns[j].className = "ocurrent";
+					}else{
+						move(lis[j],{"opacity":0})
+						btns[j].className = "";
+					}
+			}
+		}
+	  }
+	  
+	 function xs(IDname,momde){document.getElementById(IDname).style.display=momde;}
+	 
+	 $(function(){
+	 	$("#app").click(function(){
+	 		$("#code2").slideToggle(200)
+	 	})
+	 })
+ </script>
+ <style type="text/css">
+ 	#top_wrap{
+ 		position: relative;
+ 	}
+ 	#code2{
+ 		position: absolute;
+ 		height:80px;
+ 		width:80px;
+ 		top:28px;
+ 		left: 1173px;
+ 		background:url(images/code.jpg) no-repeat center;
+ 		background-size:80px 80px;
+ 		
+ 		z-index: 9997;
+ 		display: none;
+ 	}
+ 	#code2 img{
+ 		height:80px;
+ 		width:80px;
+ 	}
+ </style>
+</head>
+<body>
+	<div id="top_wrap">
+    	<div class="top_content">
+        	<p>福建<a href="#">[切换城市]</a><a id="to_top"></a></p>
+            <ul>
+            	<li><a href="#" class="current">登录</a><span>|</span></li>
+                <li><a href="#" class="current">免费注册</a><span>|</span></li>
+                <li><a href="#" class="current2">我的亿农</a><span>|</span></li>
+                <li class="margin_R"><a href="#">帮助中心</a></li>
+                <li class="margin_R addbg1"><a href="#">微信关注</a></li>
+                <li class="margin_R addbg2"><a href="#">微博关注</a></li>
+                <li id="app""><a href="#" class="current2 current3">下载手机APP</a><span class="no_mar">|</span></li>
+            </ul>
+            
+            <div id="erweima"></div>
+        </div>
+        <div id="code2"><img src="images/code.jpg"/></div>
+    </div>
+    <div id="adv_wrap"><div class="adv"><img src="images/adv01.jpg"></div></div>
+    <div id="header">
+    	<div class="header_left"><img src="images/logo.jpg"></div>
+        <div class="header_center">
+        	<p class="p1">
+                	<span class="tex_wrap"><input type="text" class="tex" ></input></span>
+                	<span class="btn_wrap"><input type="submit" value="搜索" class="btn"></input></span>
+            </p>
+            <p class="p2">热门搜索：<a href="#"> 史丹利</a> <a href="#">鲁西</a> <a href="#">荃玉</a> <a href="#">史丹利</a></p>
+        </div>
+        <div class="header_right">
+        	<p class="cir">0</p>
+        	<div class="shopping_car"><p>购物车 &nbsp;></p> </div>
+            
+            <div class="box_right">
+            	<p class="p3">订购热线</p>
+                <p class="p4"><b>400-6766-999</b></p>
+            </div>
+        </div>
+    </div>
+<!-- 导航  -->
+<div id="box">
+	<div id="ban_wrap">
+    	<div class="ban_wrap_left">
+        	<h2><p>所有商品分类</p></h2>
+            <div class="bor">
+                <div class="left1" onmouseover="xs('huafei','block')"  onmouseout="xs('huafei','none')">
+                    <p class="left1_1"><a href="list01.html" class="left1_11">化肥</a></p>
+                    <p class="left1_2"><a href="#">氮肥</a><span>|</span><a href="#">专用肥</a><span>|</span><a href="#">生长调节剂</a><a href="#">磷肥</a><span>|</span><a href="#">有机肥</a><span>|</span><a href="#">生物有机肥</a><a href="#">钾肥</a><span>|</span><a href="#">叶面肥</a><span>|</span><a href="#">肥料增效剂</a><a href="#">土壤调理剂</a><span>|</span><a href="#">复合复混肥</a></p>
+                </div>
+                <div class="left1" onmouseover="xs('zhongzi','block')"  onmouseout="xs('zhongzi','none')">
+                    <p class="left1_1"><a href="list01.html" class="left1_11">种子</a></p>
+                    <p class="left1_2"><a href="#">玉米</a><span>|</span><a href="#">小麦</a><span>|</span><a href="#">牧草种子</a><span>|</span><a href="#">棉花</a><span>|</span><a href="#">花生</a><span>|</span><a href="#">花卉种子</a><span>|</span><a href="#">油菜</a><span>|</span><a href="#">红薯</a><span>|</span><a href="#">蔬菜种子</a><span>|</span><a href="#">芝麻</a><span>|</span><a href="#">大豆</a><span>|</span><a href="#">瓜果种子</a></p>
+                </div>
+                <div class="left1 left3" onmouseover="xs('nongyao','block')"  onmouseout="xs('nongyao','none')">
+                    <p class="left1_1"><a href="list01.html" class="left1_11">农药</a></p>
+                    <p class="left1_2 left1_3"><a href="#">除草剂</a><span>|</span><a href="#">杀虫剂</a><span>|</span><a href="#">杀菌剂</a></p>
+                </div>
+            </div>
+        </div>
+
+      
+      	<div id="huafei" onmouseover="xs('huafei','block')"  onmouseout="xs('huafei','none')">
+          			<h4>分类</h4>
+                    <p><b>大田作物</b><a href="#">氮肥</a><span>|</span><a href="#">磷肥</a><span>|</span><a href="#">钾肥</a><span>|</span><a href="#">复合复混肥</a><span>|</span><a href="#">生物有机肥</a><span>|</span><a href="#">有机肥</a><span>|</span><a href="#">叶面肥</a></p>
+                	<p><b>经济作物</b><a href="#">生物有机肥</a><span>|</span><a href="#">叶面肥</a></p>
+                	<p><b>水果蔬菜</b><a href="#">生物有机肥</a><span>|</span><a href="#">叶面肥</a><span>|</span><a href="#">水溶肥</a></p>
+                	<p><b>其他肥料</b><a href="#">专用肥</a><span>|</span><a href="#">土壤调理剂</a><span>|</span><a href="#">中微量元素肥</a><span>|</span><a href="#">肥料增效剂</a><span>|</span><a href="#">生长调节剂</a></p>
+			</div>
+             
+			<div id="zhongzi" onmouseover="xs('zhongzi','block')"  onmouseout="xs('zhongzi','none')">
+				     			<h4>分类</h4>
+                    <p><b>大田作物</b><a href="#">氮肥</a><span>|</span><a href="#">磷肥</a><span>|</span><a href="#">钾肥</a><span>|</span><a href="#">复合复混肥</a><span>|</span><a href="#">生物有机肥</a><span>|</span><a href="#">有机肥</a><span>|</span><a href="#">叶面肥</a></p>
+                	<p><b>经济作物</b><a href="#">生物有机肥</a><span>|</span><a href="#">叶面肥</a></p>
+                	<p><b>水果蔬菜</b><a href="#">生物有机肥</a><span>|</span><a href="#">叶面肥</a><span>|</span><a href="#">水溶肥</a></p>
+                	<p><b>其他肥料</b><a href="#">专用肥</a><span>|</span><a href="#">土壤调理剂</a><span>|</span><a href="#">中微量元素肥</a><span>|</span><a href="#">肥料增效剂</a><span>|</span><a href="#">生长调节剂</a></p>
+			</div>
+			<div id="nongyao" onmouseover="xs('nongyao','block')"  onmouseout="xs('nongyao','none')">
+				<h4>分类</h4>
+                    <p><b>大田作物</b><a href="#">氮肥</a><span>|</span><a href="#">磷肥</a><span>|</span><a href="#">钾肥</a><span>|</span><a href="#">复合复混肥</a><span>|</span><a href="#">生物有机肥</a><span>|</span><a href="#">有机肥</a><span>|</span><a href="#">叶面肥</a></p>
+			</div>
+        <div class="ban_wrap_right">
+            <ul class="nav">
+            	<li class="current"><a href="index.html" class="current2">首页 </a></li>
+                <li><a href="pinpailist.html" class="current2">亿农商城</a></li>
+                <li><a href="#" class="current2">农技服务</a></li>
+                <li><a href="#" class="current2">专家咨询</a></li>
+                <li><a href="nongyebaike.html" class="current2">农资百科</a></li>
+                <li><a href="#" class="current2">品牌</a></li>
+            </ul>
+            <ul id="banner">
+            	<li class="bli"><img src="images/banner4.jpg"></li>
+            	<li class="bli"><img src="images/banner3.jpg"></li>
+            	<li class="bli"><img src="images/banner2.jpg"></li>
+            	<li class="bli"><img src="images/banner1.jpg"></li>
+                <!--<ul class="tubiao">
+                	<li><img src="images/icon06.png"/></li>
+                    <li><img src="images/icon07.jpg"/></li>
+                    <li><img src="images/icon08.jpg"/></li>
+                    <li><a href="#top" target="_self"><img src="images/icon09.jpg"/></a></li>
+                </ul>
+            	<p class="cir">0</p>-->
+            </ul>
+            <ol>
+            	<li class="ocurrent"></li>
+            	<li></li>
+            	<li></li>
+            	<li></li>
+            </ol>
+        </div>
+ </div>
+ </div>
+    <!-- 内容  -->
+    <div id="hot_wrap">
+    	<ul class="hot_nav">
+        	<li class="current">精品推荐</li>
+            <li>热销商品</li>
+            <li>新品上市</li>
+        </ul>
+        <div class="box_product">
+            <dl>
+                <dt><img src="images/pic01.jpg"><a id="ui1"></a></dt>
+                <dd>
+                	<p>荃玉9号  玉米种子</p>
+                    <p class="p0">￥10.00<s>￥12.00</s></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><img src="images/pic02.jpg"></dt>
+                <dd>
+                	<p>荃玉9号  玉米种子</p>
+                    <p class="p0">￥10.00  <s>￥12.00</s></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><img src="images/pic01.jpg"></dt>
+                <dd>
+                	<p>荃玉9号  玉米种子</p>
+                    <p class="p0">￥10.00  <s>￥12.00</s></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><img src="images/pic04.jpg"></dt>
+                <dd>
+                	<p>荃玉9号  玉米种子</p>
+                    <p class="p0">￥10.00  <s>￥12.00</s></p>
+                </dd>
+            </dl>
+            <dl>
+                <dt><img src="images/pic01.jpg"></dt>
+                <dd>
+                	<p>荃玉9号  玉米种子</p>
+                    <p class="p0">￥10.00  <s>￥12.00</s></p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="line"></div>
+    <p class="jiantou1" id="jiantou1"><img src="images/jiantou.jpg"/></p>
+    
+    <ul class="left_ui">
+   	  	<li id="m1"><a href="#ui1"></a></li>
+        <li id="m2"><a href="#ui2"></a></li>
+        <li id="m3"><a href="#ui3"></a></li>
+	</ul>
+<div class="ping01">
+    	<div class="ping01_L"> 
+        	<div class="Left">
+            	
+            	<h2><p>化肥</p><span>1F</span></h2>
+                <div><img src="images/pic05.jpg"></div>
+            </div>
+            <div class="Right">
+            	<p class="ping_nav"><a href="#">氮肥</a><span>|</span><a href="#">磷肥</a><span>|</span><a href="#">肥料增效剂</a><span>|</span><a href="#">复合肥</a><span class="go">去逛逛</span></p>
+                <div class="ping_content">
+                	<dl>
+                    	<dt><img src="images/hufei01.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/hufei02.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/hufei03.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/hufei04.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/hufei05.jpg"><a id="ui2"></a></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/hufei06.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/hufei07.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/hufei08.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="ping01_R">
+        	<h2>化肥热销排行榜</h2>
+            <dl>
+            	<dt><img src="images/pic06.jpg"><span class="current">1</span></dt>
+                <dd>
+                	<p class="addheight"><a href="#">史丹利 纯硫基 复合肥 17-17-17</a></p>
+                    <p><span>￥12.00</span></p>
+                    <p><span>0</span>人评论</p>
+                </dd>
+            </dl>
+              <dl>
+            	<dt><img src="images/pic06.jpg"><span>2</span></dt>
+                <dd>
+                	<p class="addheight"><a href="#">史丹利 纯硫基 复合肥 17-17-17</a></p>
+                    <p><span>￥12.00</span></p>
+                    <p><span>0</span>人评论</p>
+                </dd>
+            </dl>
+              <dl>
+            	<dt><img src="images/pic06.jpg"><span>3</span></dt>
+                <dd>
+                	<p class="addheight"><a href="#">史丹利 纯硫基 复合肥 17-17-17</a></p>
+                    <p><span>￥12.00</span></p>
+                    <p><span>0</span>人评论</p>
+                </dd>
+            </dl>
+            <p class="ic"><span>4</span><a href="#">鲁西复合肥22号</a></p>
+            <p class="ic"><span>5</span><a href="#">鲁西复合肥22号</a></p>
+            <p class="ic"><span>6</span><a href="#">鲁西复合肥22号</a></p>
+        
+        </div>
+    </div>
+    
+       <div class="ping01">
+    	<div class="ping01_L">
+        	<div class="Left">
+            	<h2 class="changebg01"><p class="changebg001">农药</p><span>2F</span></h2>
+                <div><img src="images/nongyao00.jpg"></div>
+            </div>
+            <div class="Right">
+            	<p class="ping_nav"><a href="#">除草剂</a><span>|</span><a href="#">杀虫剂</a><span>|</span><a href="#">除菌剂</a><span class="go">去逛逛</span></p>
+                <div class="ping_content">
+                	<dl>
+                    	<dt><img src="images/nongyao01.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/nongyao02.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/nongyao03.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/nongyao04.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/nongyao05.jpg"><a id="ui3"></a></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/nongyao06.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/nongyao07.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/nongyao08.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="ping01_R">
+        	<h2>农药热销排行榜</h2>
+            <dl>
+            	<dt><img src="images/pic06.jpg"><span class="current">1</span></dt>
+                <dd>
+                	<p class="addheight"><a href="#">史丹利 纯硫基 复合肥 17-17-17</a></p>
+                    <p><span>￥12.00</span></p>
+                    <p><span>0</span>人评论</p>
+                </dd>
+            </dl>
+              <dl>
+            	<dt><img src="images/pic06.jpg"><span>2</span></dt>
+                <dd>
+                	<p class="addheight"><a href="#">史丹利 纯硫基 复合肥 17-17-17</a></p>
+                    <p><span>￥12.00</span></p>
+                    <p><span>0</span>人评论</p>
+                </dd>
+            </dl>
+              <dl>
+            	<dt><img src="images/pic06.jpg"><span>3</span></dt>
+                <dd>
+                	<p class="addheight"><a href="#">史丹利 纯硫基 复合肥 17-17-17</a></p>
+                    <p><span>￥12.00</span></p>
+                    <p><span>0</span>人评论</p>
+                </dd>
+            </dl>
+            <p class="ic"><span>4</span><a href="#">鲁西复合肥22号</a></p>
+            <p class="ic"><span>5</span><a href="#">鲁西复合肥22号</a></p>
+            <p class="ic"><span>6</span><a href="#">鲁西复合肥22号</a></p>
+        
+        </div>
+    </div>
+    
+       <div class="ping01">
+    	<div class="ping01_L">
+        	<div class="Left">
+            	<h2 class="changebg02"><p class="changebg002">种子</p><span>3F</span></h2>
+                <div><img src="images/zhongzi00.jpg"></div>
+            </div>
+            <div class="Right">
+            	<p class="ping_nav"><a href="#">大田种子</a><span>|</span><a href="#">牧草种子</a><span>|</span><a href="#">花卉种子</a><span class="go">去逛逛</span></p>
+                <div class="ping_content">
+                	<dl>
+                    	<dt><img src="images/zhongzi01.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/zhongzi02.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/zhongzi03.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/zhongzi04.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/pic02.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/zhongzi05.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/pic02.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/zhongzi04.jpg"></dt>
+                        <dd>
+                        	<p>荃玉9号  玉米种子</p>
+                    		<p class="p0">￥10.00  <s>￥12.00</s></p>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="ping01_R">
+        	<h2>种子热销排行榜</h2>
+            <dl>
+            	<dt><img src="images/pic06.jpg"><span class="current">1</span></dt>
+                <dd>
+                	<p class="addheight"><a href="#">史丹利 纯硫基 复合肥 17-17-17</a></p>
+                    <p><span>￥12.00</span></p>
+                    <p><span>0</span>人评论</p>
+                </dd>
+            </dl>
+              <dl>
+            	<dt><img src="images/pic06.jpg"><span>2</span></dt>
+                <dd>
+                	<p class="addheight"><a href="#">史丹利 纯硫基 复合肥 17-17-17</a></p>
+                    <p><span>￥12.00</span></p>
+                    <p><span>0</span>人评论</p>
+                </dd>
+            </dl>
+              <dl>
+            	<dt><img src="images/pic06.jpg"><span>3</span></dt>
+                <dd>
+                	<p class="addheight"><a href="#">史丹利 纯硫基 复合肥 17-17-17</a></p>
+                    <p><span>￥12.00</span></p>
+                    <p><span>0</span>人评论</p>
+                </dd>
+            </dl>
+            <p class="ic"><span>4</span><a href="#">鲁西复合肥22号</a></p>
+            <p class="ic"><span>5</span><a href="#">鲁西复合肥22号</a></p>
+            <p class="ic"><span>6</span><a href="#">鲁西复合肥22号</a></p>
+        
+        </div>
+    </div>
+    
+    <!-- footer-->
+    <div id="footer">
+    	<div class="footer_top">
+        	<div class="footer_top_left">
+            	<dl>
+                	<dt>新手上路</dt>
+                    <dd><a href="#">购物流程</a></dd>
+                    <dd><a href="#">常见问题</a></dd>
+                </dl>
+                <dl>
+                	<dt>配送方式</dt>
+                    <dd><a href="#">货到付款</a></dd>
+                    <dd><a href="#">支付方式</a></dd>
+                    <dd><a href="#">支付流程</a></dd>
+                </dl>
+                <dl>
+                	<dt>购物指南</dt>
+                    <dd><a href="#">电话订购流程</a></dd>
+                    <dd><a href="#">网上订购流程</a></dd>
+                </dl>
+                <dl>
+                	<dt>售后服务</dt>
+                    <dd><a href="#">退换货原则</a></dd>
+                    <dd><a href="#">售后服务保证</a></dd>
+                    <dd><a href="#">换货流程</a></dd>
+                </dl>
+                <dl>
+                	<dt>关于我们</dt>
+                    <dd><a href="#">联系方式</a></dd>
+                    <dd><a href="#">公司介绍</a></dd>
+                </dl>
+                <dl>
+                	<dt>关注亿农</dt>
+                    <dd><img src="images/weiboicon.jpg"> <a href="#">关注亿农乐购微博</a></dd>
+                    <dd><img src="images/wecharticon.jpg"> <a href="#">关注亿农乐购微信</a></dd>
+                    <dd><a href="#"> &nbsp;&nbsp;&nbsp;下载亿农乐购APP</a></dd>
+                </dl>
+            
+            </div>
+            <div class="footer_top_right">
+            	<img src="images/proot.jpg">
+                <p>安全农产品溯源公众平台</p>
+            </div>
+        </div>
+        <div class="bottom">
+        	<p>&copy; 2005-2015 亿农乐购网上商城 版权所有，并保留所有权利。 ICP备案证书号:13003346</p>
+            <p>天津市武清区创业总部基地C07  Tel: 400-6766-999</p>
+        </div>
+    
+    </div>
+    
+</body>
+
+
+</html>
